@@ -1,0 +1,308 @@
+/* ========================================
+   Base
+======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #0b0f14;
+  color: #e6edf3;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   Header / Hero
+======================================== */
+
+header {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(64, 112, 255, 0.15),
+      transparent 45%
+    ),
+    #0b0f14;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+header h1 br + * {
+  color: #8b949e;
+}
+
+/* Make the second line visually different */
+header h1 {
+  color: #f0f6fc;
+}
+
+/* ========================================
+   General Sections
+======================================== */
+
+section {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+#about-me,
+#projects,
+#technical-skills,
+#education {
+  padding: 7rem 0;
+}
+
+#about-me::before,
+#projects::before,
+#technical-skills::before,
+#education::before {
+  display: block;
+  margin-bottom: 3rem;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6e7681;
+}
+
+/* ========================================
+   Section Titles
+======================================== */
+
+#about-me {
+  font-size: 1.2rem;
+  color: #c9d1d9;
+}
+
+#about-me::before {
+  content: "About Me";
+}
+
+#projects::before {
+  content: "Projects";
+}
+
+#technical-skills::before {
+  content: "Technical Skills";
+}
+
+#education::before {
+  content: "Education";
+}
+
+/* ========================================
+   Projects
+======================================== */
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project {
+  width: 100%;
+  padding: 1.5rem;
+
+  background: #151b23;;
+  border: 1px solid #212832;
+  border-radius: 16px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.project:hover {
+  border-color: #3b82f6;
+  background: #181f29;
+}
+
+.project-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f0f6fc;
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  color: #8b949e;
+  font-size: 1rem;
+  max-width: 900px;
+}
+
+/* ========================================
+   Technical Skills
+======================================== */
+
+#technical-skills {
+  color: #c9d1d9;
+}
+
+#technical-skills > list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+#technical-skills > list > li {
+  list-style: none;
+
+  padding: 1.5rem;
+  background: #11161d;
+  border: 1px solid #212832;
+  border-radius: 14px;
+
+  color: #f0f6fc;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+/* Skill lists */
+
+#technical-skills list list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+#technical-skills list list li {
+  list-style: none;
+
+  padding: 0.35rem 0.8rem;
+
+  background: #1a222c;
+  border: 1px solid #293340;
+  border-radius: 500px;
+
+  color: #9da7b3;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+/* ========================================
+   Education
+======================================== */
+
+#education {
+  color: #8b949e;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+#education {
+  background: transparent;
+}
+
+/* ========================================
+   Links / Buttons
+======================================== */
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #79c0ff;
+}
+
+/* ========================================
+   Scroll Fade Animation
+======================================== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   Responsive Design
+======================================== */
+
+@media (max-width: 700px) {
+
+  header {
+    min-height: 70vh;
+    padding: 3rem 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  #about-me,
+  #projects,
+  #technical-skills,
+  #education {
+    padding: 4.5rem 0;
+  }
+
+  #technical-skills > list {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    padding: 1.5rem;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+}

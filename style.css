@@ -34,7 +34,7 @@ header {
 
   background:
     radial-gradient(
-      circle at 50% 30%,
+      circle at 60% 30%,
       rgba(64, 112, 255, 0.15),
       transparent 45%
     ),
@@ -52,7 +52,6 @@ header h1 br + * {
   color: #8b949e;
 }
 
-/* Make the second line visually different */
 header h1 {
   color: #f0f6fc;
 }
@@ -78,13 +77,17 @@ section {
 #technical-skills::before,
 #education::before {
   display: block;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #6e7681;
+  color: #9aa1aa;
+}
+
+#about-me p {
+  margin-bottom: 0.6rem;
 }
 
 /* ========================================
@@ -94,6 +97,7 @@ section {
 #about-me {
   font-size: 1.2rem;
   color: #c9d1d9;
+  margin-top: 2rem;
 }
 
 #about-me::before {
@@ -120,6 +124,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-top:-5rem;
 }
 
 .project {
@@ -218,6 +223,34 @@ section {
 
 #education {
   background: transparent;
+}
+
+.education-item {
+  padding: 2rem;
+  background: #11161d;
+  border: 1px solid #212832;
+  border-radius: 14px;
+}
+
+.education-item h3 {
+  color: #f0f6fc;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.education-item #degree {
+  color: #c9d1d9;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.education-item #year {
+  color: #6e7681;
+  margin-bottom: 1.25rem;
+}
+
+.education-item #coursework {
+  color: #8b949e;
 }
 
 /* ========================================
